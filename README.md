@@ -1,5 +1,6 @@
 ### AWS-EKS-Ingress-AWSLoadbalancerController <br/>
 AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
+* Clone the repository and navigate to the folder lab-05
 * Create an EKS Cluster <br/>
   $ eksctl create cluster --name k8sdemo --version 1.23 --region us-west-2 --nodegroup-name k8snodes --node-type t3.medium --nodes 2 <br/>
 * An existing AWS Identity and Access Management (IAM) OpenID Connect (OIDC) provider for your cluster. To determine whether one already exists, or to create one, refer [Creating an IAM OIDC provider for your cluster](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html).<br/>
@@ -19,6 +20,8 @@ AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
   $ helm upgrade aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=k8sdemo --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller <br/>
 * Verify that the controller is installed <br/>
   $ kubectl get deployment -n kube-system aws-load-balancer-controller <br/>
+* To debug view the AWS Load Balancer Controller logs. These logs might contain error messages that you can use to diagnose issues with your deployment. <br/>
+  $ kubectl logs -n kube-system deployment.apps/aws-load-balancer-controller <br/>
 
 
 
