@@ -37,6 +37,7 @@ AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
   $ http://<<-DNS name from above->>/dogs <br/>
   $ http://<<-DNS name from above->>/birds <br/>
 * Clean up AWS enviornment <br/>
+  $ helm uninstall aws-load-balancer-controller -n kube-system <br/>
   $ eksctl delete cluster --name k8sdemo <br/>
 
 
