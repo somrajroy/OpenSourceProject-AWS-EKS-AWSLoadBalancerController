@@ -1,6 +1,7 @@
 ### AWS-EKS-Ingress-AWSLoadbalancerController <br/>
 AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
 * Clone the repository and navigate to the folder lab-05
+* It is highly recommended to use eksctl for cluster creation and subsequent management as eksctl will automatically do many tasks which has to be manually done otherwise <br/>
 * Create an EKS Cluster <br/>
   $ eksctl create cluster --name k8sdemo --version 1.23 --region us-west-2 --nodegroup-name k8snodes --node-type t3.medium --nodes 2 <br/>
 * An existing AWS Identity and Access Management (IAM) OpenID Connect (OIDC) provider for your cluster. To determine whether one already exists, or to create one, refer [Creating an IAM OIDC provider for your cluster](https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html).<br/>
@@ -21,7 +22,22 @@ AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
 * Verify that the controller is installed <br/>
   $ kubectl get deployment -n kube-system aws-load-balancer-controller <br/>
 * To debug view the AWS Load Balancer Controller logs. These logs might contain error messages that you can use to diagnose issues with your deployment. <br/>
-  $ kubectl logs -n kube-system deployment.apps/aws-load-balancer-controller <br/>
+  $ kubectl logs -n kube-system deployment.apps/aws-load-balancer-controller <br/> 
+* Deploy the applications (pods and ClusterIP services) <br/>
+  $ kubectl apply -f cats.yaml <br/>
+  $ kubectl apply -f dogs.yaml <br/>
+  $ kubectl apply -f birds.yaml <br/>
+* Create the ingress resource <br/>
+  $ kubectl apply -f ingress.yaml <br/>
+* Get the DNS name of the ALB from EC2 management console or by running below command. <br/>
+  $ kubectl get ingress <br/>
+    ![image](https://user-images.githubusercontent.com/92582005/202916008-c84483bc-73a4-48e1-8e5c-17f5535e2208.png) <br/>
+* Access the application - Browse to the cats, dogs and birds service <br/>
+  $ http://<<-DNS name from above->>/cats <br/>
+  $ http://<<-DNS name from above->>/dogs <br/>
+  $ http://<<-DNS name from above->>/birds <br/>
+* Clean up AWS enviornment <br/>
+  $ eksctl delete cluster --name k8sdemo <br/>
 
 
 
