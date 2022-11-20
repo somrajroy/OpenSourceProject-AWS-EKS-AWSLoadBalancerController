@@ -47,3 +47,4 @@ AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
 * [Kubernetes Ingress with AWS ALB Ingress Controller](https://aws.amazon.com/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/)<br/>
 * [How do I provide external access to multiple Kubernetes services in my Amazon EKS cluster?](https://aws.amazon.com/premiumsupport/knowledge-center/eks-access-kubernetes-services/)<br/>
 * [How do I set up an Application Load Balancer using the AWS Load Balancer Controller on an Amazon EC2 node group in Amazon EKS?](https://aws.amazon.com/premiumsupport/knowledge-center/eks-alb-ingress-controller-setup/)<br/>
+* [Amazon Elastic Container Registry Identity-based policy examples](https://docs.aws.amazon.com/AmazonECR/latest/userguide/security_iam_id-based-policy-examples.html)<br/>
