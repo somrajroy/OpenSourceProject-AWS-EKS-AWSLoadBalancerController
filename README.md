@@ -45,10 +45,10 @@ AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
   $ eksctl delete cluster --name k8sdemo <br/>
 * Following diagram, from AWS Documentation,details the AWS components that the aws-alb-ingress-controller creates whenever an Ingress resource is defined by the user.   The Ingress resource routes ingress traffic from the ALB to the Kubernetes cluster.<br/>
     * (1) The controller watches for Ingress events from the API server. When it finds Ingress resources that satisfy its requirements, it starts the creation of AWS  resources.<br/>
-    * 2) An ALB is created for the Ingress resource.<br/>
-    * 3) TargetGroups are created for each backend specified in the Ingress resource.<br/>
-    * 4) Listeners are created for every port specified as Ingress resource annotation. If no port is specified, sensible defaults (80 or 443) are used.<br/>
-    * 5) Rules are created for each path specified in your Ingress resource. This ensures that traffic to a specific path is routed to the correct TargetGroup created.<br/>
+    * (2) An ALB is created for the Ingress resource.<br/>
+    * (3) TargetGroups are created for each backend specified in the Ingress resource.<br/>
+    * (4) Listeners are created for every port specified as Ingress resource annotation. If no port is specified, sensible defaults (80 or 443) are used.<br/>
+    * (5) Rules are created for each path specified in your Ingress resource. This ensures that traffic to a specific path is routed to the correct TargetGroup created.<br/>
   ![image](https://user-images.githubusercontent.com/92582005/203908338-1c7a4ca9-442c-45ef-ba9c-0fa00d93c9bd.png) <br/>
 
 ### References <br/>
