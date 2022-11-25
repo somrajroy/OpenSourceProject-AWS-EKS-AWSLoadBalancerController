@@ -43,6 +43,7 @@ AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
 
 
 ### References <br/>
+* [Unboxing the new AWS Load Balancer Controller for K8s](https://www.youtube.com/watch?v=Lw4-noYhMjQ)
 * [Application load balancing on Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html)<br/>
 * [Installing the AWS Load Balancer Controller add-on](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)<br/>
 * [Kubernetes Ingress with AWS ALB Ingress Controller](https://aws.amazon.com/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/)<br/>
