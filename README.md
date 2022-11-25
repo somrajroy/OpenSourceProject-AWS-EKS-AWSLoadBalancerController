@@ -3,6 +3,7 @@ AWS EKS Ingress with latest AWS Load Balancer Controller<br/>
 * [The ALB Ingress Controller is now the AWS Load Balancer Controller](https://aws.amazon.com/blogs/containers/introducing-aws-load-balancer-controller/), and includes support for both Application Load Balancers and Network Load Balancers. AWS Load Balancer Controller is a controller to help manage Elastic Load Balancers for a Kubernetes cluster.The controller provisions the following resources:<br/>
    *  It satisfies Kubernetes Ingress resources by provisioning Application Load Balancers. <br/>
    *  It satisfies Kubernetes Service resources by provisioning Network Load Balancers.<br/>
+* [Introducing the AWS Load Balancer Controller](https://aws.amazon.com/about-aws/whats-new/2020/10/introducing-aws-load-balancer-controller/)<br/>
 * Clone the repository and navigate to the folder ALB <br/>
 * It is highly recommended to use eksctl for cluster creation and subsequent management as eksctl will automatically do many tasks which has to be manually done otherwise <br/>
 * Create an EKS Cluster <br/>
